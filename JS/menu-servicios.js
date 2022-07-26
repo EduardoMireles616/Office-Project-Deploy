@@ -58,9 +58,75 @@ import { instalacion,
          contacto5,
          contacto6,
          contactoForm,
-         nosotrosHerramienta,
          contactoTitulo,
-         otrosClientes
+         otrosClientes,
+         clientesPrincipales,
+         clientesPrincipalesTitulo,
+        nosotrosMD1,
+        nosotrosMD2,
+        nosotrosMD3,
+        nosotrosMD4,
+        nosotrosMD5,
+        nosotrosMD6,
+        nosotros_menuServMD1,
+        cerrar_nosotrosMD1,
+        nosotros_menuServMD2,
+        cerrar_nosotrosMD2,
+        selectDesarmadoMD,
+        nosotros_menuServMD3,
+        cerrar_nosotrosMD3,
+        selectMudanzaMobiliarioMD,
+        nosotros_menuServMD4,
+        cerrar_nosotrosMD4,
+        selectMudanzaComputadorasMD,
+        nosotros_menuServMD5,
+        cerrar_nosotrosMD5,
+        selectMobiliarioRecMD,
+        nosotros_menuServMD6,
+        cerrar_nosotrosMD6,
+        selectReparacionMD,
+        contactoFormMD1,
+        contactoMD1,
+        contactoMD2,
+        contactoMD3,
+        contactoMD4,
+        contactoMD5,
+        contactoMD6,
+        ccerrar_contactoMD1,
+        contactoFormMD2,
+        cerrar_contactoMD2,
+        contactoFormMD3,
+        cerrar_contactoMD3,
+        contactoFormMD4,
+        cerrar_contactoMD4,
+        contactoFormMD5,
+        cerrar_contactoMD5,
+        contactoFormMD6,
+        cerrar_contactoMD6,
+        clientesMD1,
+        galeriaClientesMD1,
+        cerrar_clientesMD1,
+        clientesMD2,
+        galeriaClientesMD2,
+        cerrar_clientesMD2,
+        clientesMD3,
+        galeriaClientesMD3,
+        cerrar_clientesMD3,
+        clientesMD4,
+        galeriaClientesMD4,
+        cerrar_clientesMD4,
+        clientesMD5,
+        galeriaClientesMD5,
+        cerrar_clientesMD5,
+        clientesMD6,
+        galeriaClientesMD6,
+        cerrar_clientesMD6,
+        procesoMudanzaComputadoras,
+        procesoMudanzaMobiliario,
+        procesoRec,
+        procesoArmadoDesarmado,
+        procesoArmadoDesarmadoMD
+
 
 } from '../JS/utils/selectores.js'
 
@@ -199,8 +265,54 @@ function eventListeners() {
     contacto4.addEventListener('click', desplegarContacto);
     contacto5.addEventListener('click', desplegarContacto);
     contacto6.addEventListener('click', desplegarContacto);
-}
 
+    //Nosotros debajo de MD
+    nosotrosMD1.addEventListener('click', desplegarNosotrosMD1);
+    nosotrosMD2.addEventListener('click', desplegarNosotrosMD2);
+    nosotrosMD3.addEventListener('click', desplegarNosotrosMD3);
+    nosotrosMD4.addEventListener('click', desplegarNosotrosMD4);
+    nosotrosMD5.addEventListener('click', desplegarNosotrosMD5);
+    nosotrosMD6.addEventListener('click', desplegarNosotrosMD6);
+
+    //Cerrar Nosotros debajo de MD
+    cerrar_nosotrosMD1.addEventListener('click', cerrarNosotrosMD1);
+    cerrar_nosotrosMD2.addEventListener('click', cerrarNosotrosMD2);
+    cerrar_nosotrosMD3.addEventListener('click', cerrarNosotrosMD3);
+    cerrar_nosotrosMD4.addEventListener('click', cerrarNosotrosMD4);
+    cerrar_nosotrosMD5.addEventListener('click', cerrarNosotrosMD5);
+    cerrar_nosotrosMD6.addEventListener('click', cerrarNosotrosMD6);
+
+    //Contacto debajo de MD
+     contactoMD1.addEventListener('click', desplegarContactoMD1);
+     contactoMD2.addEventListener('click', desplegarContactoMD2);
+     contactoMD3.addEventListener('click', desplegarContactoMD3);
+     contactoMD4.addEventListener('click', desplegarContactoMD4);
+     contactoMD5.addEventListener('click', desplegarContactoMD5);
+     contactoMD6.addEventListener('click', desplegarContactoMD6);
+
+     ccerrar_contactoMD1.addEventListener('click', cerrarContactoMD1);
+     cerrar_contactoMD2.addEventListener('click', cerrarContactoMD2);
+     cerrar_contactoMD3.addEventListener('click', cerrarContactoMD3);
+     cerrar_contactoMD4.addEventListener('click', cerrarContactoMD4);
+     cerrar_contactoMD5.addEventListener('click', cerrarContactoMD5);
+     cerrar_contactoMD6.addEventListener('click', cerrarContactoMD6);
+
+     //Clientes denajo de MD
+     clientesMD1.addEventListener('click', desplegarClientesMD1);
+     clientesMD2.addEventListener('click', desplegarClientesMD2);
+     clientesMD3.addEventListener('click', desplegarClientesMD3);
+     clientesMD4.addEventListener('click', desplegarClientesMD4);
+     clientesMD5.addEventListener('click', desplegarClientesMD5);
+     clientesMD6.addEventListener('click', desplegarClientesMD6);
+
+     cerrar_clientesMD1.addEventListener('click', cerrarClientesMD1);
+     cerrar_clientesMD2.addEventListener('click', cerrarClientesMD2);
+     cerrar_clientesMD3.addEventListener('click', cerrarClientesMD3);
+     cerrar_clientesMD4.addEventListener('click', cerrarClientesMD4);
+     cerrar_clientesMD5.addEventListener('click', cerrarClientesMD5);
+     cerrar_clientesMD6.addEventListener('click', cerrarClientesMD6);
+
+}
 //Funciones
 
 //!Aplicacion de Dispositivos de Escritorio 
@@ -214,7 +326,7 @@ function desplegar(e){
             return;
             
         }
-    }  
+     } 
     
     else if (e.target.classList.contains('select_mudanzas') || e.target.classList.contains('container__servicio--mudanzas')) {
 
@@ -301,13 +413,18 @@ function desplegarNosotros(e) {
     if (e.target.classList.contains('opciones__servicio--btn')) {
         
         if (true) {
-            nosotrosHerramienta.classList.remove('ocultar');
-            nosotrosServ.classList.remove('ocultar');
+            
             nosotrosMenuServ.classList.remove('ocultar');
             clientesGaleria.classList.add('ocultar');
             contactoForm.classList.add('ocultar');
             contactoTitulo.classList.add('ocultar');
             otrosClientes.classList.add('ocultar');
+            clientesPrincipalesTitulo.classList.add('ocultar');
+            clientesPrincipales.classList.add('ocultar');
+            procesoMudanzaComputadoras.classList.add('ocultar');
+            procesoMudanzaMobiliario.classList.add('ocultar');
+            procesoRec.classList.add('ocultar');
+            procesoArmadoDesarmado.classList.add('ocultar');
         }
 
     }
@@ -319,13 +436,18 @@ function desplegarClientes(e) {
     if (e.target.classList.contains('opciones__servicio--btn')) {
         
         if (true) {
+            clientesPrincipalesTitulo.classList.remove('ocultar');
+            clientesPrincipales.classList.remove('ocultar');
             otrosClientes.classList.remove('ocultar');
             clientesGaleria .classList.remove('ocultar');
-            nosotrosServ.classList.add('ocultar');
             nosotrosMenuServ.classList.add('ocultar');
             contactoForm.classList.add('ocultar');
             contactoTitulo.classList.add('ocultar');
-            nosotrosHerramienta.classList.add('ocultar');
+            procesoMudanzaComputadoras.classList.add('ocultar');
+            procesoMudanzaMobiliario.classList.add('ocultar');
+            procesoRec.classList.add('ocultar');
+            procesoArmadoDesarmado.classList.add('ocultar');
+            
         }
     }
 }
@@ -338,10 +460,14 @@ function desplegarContacto(e) {
             contactoTitulo.classList.remove('ocultar');
             contactoForm.classList.remove('ocultar');
             clientesGaleria .classList.add('ocultar');
-            nosotrosServ.classList.add('ocultar');
             nosotrosMenuServ.classList.add('ocultar');
-            nosotrosHerramienta.classList.add('ocultar');
             otrosClientes.classList.add('ocultar');
+            clientesPrincipalesTitulo.classList.add('ocultar');
+            clientesPrincipales.classList.add('ocultar');
+            procesoMudanzaComputadoras.classList.add('ocultar');
+            procesoMudanzaMobiliario.classList.add('ocultar');
+            procesoRec.classList.add('ocultar');
+            procesoArmadoDesarmado.classList.add('ocultar');
         }
     }
 }
@@ -427,3 +553,291 @@ function desplegarMDS(e) {
     }
 }
 
+//?Funciones de desplegar Nosotros debajo de MD
+
+function desplegarNosotrosMD1(e) {
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            selectArmadoMD.classList.add('ocultar');
+            nosotros_menuServMD1.classList.remove('ocultar');
+        }
+    }
+}
+
+function desplegarNosotrosMD2(e) {
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            selectDesarmadoMD.classList.add('ocultar');
+            nosotros_menuServMD2.classList.remove('ocultar');
+        }
+    }
+}
+
+function desplegarNosotrosMD3(e) {
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            selectMudanzaMobiliarioMD.classList.add('ocultar');
+            nosotros_menuServMD3.classList.remove('ocultar');
+        }
+    }
+}
+
+function desplegarNosotrosMD4(e) {
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            selectMudanzaComputadorasMD.classList.add('ocultar');
+            nosotros_menuServMD4.classList.remove('ocultar');
+            
+        }
+    }
+}
+
+function desplegarNosotrosMD5(e) {
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            selectMobiliarioRecMD.classList.add('ocultar');
+            nosotros_menuServMD5.classList.remove('ocultar');
+        }
+    }
+}
+
+function desplegarNosotrosMD6(e) {
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            selectReparacionMD.classList.add('ocultar');
+            nosotros_menuServMD6.classList.remove('ocultar');
+        }
+    }
+}
+
+function cerrarNosotrosMD1() {
+    selectArmadoMD.classList.remove('ocultar');
+    nosotros_menuServMD1.classList.add('ocultar');
+}
+
+function cerrarNosotrosMD2() {
+    selectDesarmadoMD.classList.remove('ocultar');
+    nosotros_menuServMD2.classList.add('ocultar');
+}
+
+function cerrarNosotrosMD3() {
+    selectMudanzaMobiliarioMD.classList.remove('ocultar');
+    nosotros_menuServMD3.classList.add('ocultar');
+}
+
+function cerrarNosotrosMD4() {
+    selectMudanzaComputadorasMD.classList.remove('ocultar');
+    nosotros_menuServMD4.classList.add('ocultar');
+}
+
+function cerrarNosotrosMD5() {
+    selectMobiliarioRecMD.classList.remove('ocultar');
+    nosotros_menuServMD5.classList.add('ocultar');
+}
+
+function cerrarNosotrosMD6() {
+    selectReparacionMD.classList.remove('ocultar');
+    nosotros_menuServMD6.classList.add('ocultar');
+}
+
+//?Funciones de desplegar Contacto debajo de MD
+
+function desplegarContactoMD1(e) {
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            contactoFormMD1.classList.remove('ocultar');
+            selectArmadoMD.classList.add('ocultar');
+        }
+    }
+}
+
+function desplegarContactoMD2(e) {
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            contactoFormMD2.classList.remove('ocultar');
+            selectDesarmadoMD.classList.add('ocultar');
+        }
+    }
+}
+
+function desplegarContactoMD3(e) {
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            contactoFormMD3.classList.remove('ocultar');
+            selectMudanzaMobiliarioMD.classList.add('ocultar');
+        }
+    }
+}
+
+function desplegarContactoMD4(e) {
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            contactoFormMD4.classList.remove('ocultar');
+            selectMudanzaComputadorasMD.classList.add('ocultar');
+        }
+    }
+}
+
+function desplegarContactoMD5(e) {
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            contactoFormMD5.classList.remove('ocultar');
+            selectMobiliarioRecMD.classList.add('ocultar');
+        }
+    }
+}
+
+function desplegarContactoMD6(e) {
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            contactoFormMD6.classList.remove('ocultar');
+            selectReparacionMD.classList.add('ocultar');
+        }
+    }
+}
+
+function cerrarContactoMD1() {
+    contactoFormMD1.classList.add('ocultar');
+    selectArmadoMD.classList.remove('ocultar');
+}
+
+function cerrarContactoMD2() {
+    contactoFormMD2.classList.add('ocultar');
+    selectDesarmadoMD.classList.remove('ocultar');
+}
+
+function cerrarContactoMD3() {
+    contactoFormMD3.classList.add('ocultar');
+    selectMudanzaMobiliarioMD.classList.remove('ocultar');
+}
+
+function cerrarContactoMD4() {
+    contactoFormMD4.classList.add('ocultar');
+    selectMudanzaComputadorasMD.classList.remove('ocultar');
+}
+
+function cerrarContactoMD5() {
+    contactoFormMD5.classList.add('ocultar');
+    selectMobiliarioRecMD.classList.remove('ocultar');
+}
+
+function cerrarContactoMD6() {
+    contactoFormMD6.classList.add('ocultar');
+    selectReparacionMD.classList.remove('ocultar');
+}
+
+//?Funciones de desplegar Clientes debajo de MD
+
+function desplegarClientesMD1(e) {
+
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            selectArmadoMD.classList.add('ocultar');
+            galeriaClientesMD1.classList.remove('ocultar');
+        }
+    }
+}
+
+function desplegarClientesMD2(e) {
+
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            selectDesarmadoMD.classList.add('ocultar');
+            galeriaClientesMD2.classList.remove('ocultar');
+        }
+    }
+}
+
+function desplegarClientesMD3(e) {
+
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            selectMudanzaMobiliarioMD.classList.add('ocultar');
+            galeriaClientesMD3.classList.remove('ocultar');
+        }
+    }
+}
+
+function desplegarClientesMD4(e) {
+
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            selectMudanzaComputadorasMD.classList.add('ocultar');
+            galeriaClientesMD4.classList.remove('ocultar');
+        }
+    }
+}
+
+function desplegarClientesMD5(e) {
+
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            selectMobiliarioRecMD.classList.add('ocultar');
+            galeriaClientesMD5.classList.remove('ocultar');
+        }
+    }
+}
+
+function desplegarClientesMD6(e) {
+
+    if (e.target.classList.contains('btn-servicioMD')) {
+        
+        if (true) {
+            selectReparacionMD.classList.add('ocultar');
+            galeriaClientesMD6.classList.remove('ocultar');
+        }
+    }
+}
+
+function cerrarClientesMD1() {
+
+    selectArmadoMD.classList.remove('ocultar');
+    galeriaClientesMD1.classList.add('ocultar');
+}
+
+function cerrarClientesMD2() {
+
+    selectDesarmadoMD.classList.remove('ocultar');
+    galeriaClientesMD2.classList.add('ocultar');
+}
+
+function cerrarClientesMD3() {
+
+    selectMudanzaMobiliarioMD.classList.remove('ocultar');
+    galeriaClientesMD3.classList.add('ocultar');
+}
+
+function cerrarClientesMD4() {
+
+    selectMudanzaComputadorasMD.classList.remove('ocultar');
+    galeriaClientesMD4.classList.add('ocultar');
+}
+
+function cerrarClientesMD5() {
+
+    selectMobiliarioRecMD.classList.remove('ocultar');
+    galeriaClientesMD5.classList.add('ocultar');
+}
+
+function cerrarClientesMD6() {
+
+    selectReparacionMD.classList.remove('ocultar');
+    galeriaClientesMD6.classList.add('ocultar');
+}

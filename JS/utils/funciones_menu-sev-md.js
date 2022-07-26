@@ -40,7 +40,8 @@ import { instalacion,
     selectMobiliarioRecMD,
     cerrarRecMobiliarioMD,
     selectReparacionMD,
-    cerrarReperacionMD
+    cerrarReperacionMD,
+    procesoArmadoDesarmadoMD
 
 } from '../utils/selectores.js'
 
@@ -54,6 +55,7 @@ export const mobiliarioSeleccionadoMD = function() {
     cerrarMD.classList.add('active');
     armadoMD.classList.remove('ocultar');
     desarmadoMD.classList.remove('ocultar');
+    procesoArmadoDesarmadoMD.classList.remove('ocultar');
 }
 
 // ! Funcion que despliega las opciones del servicio de mudanzas de mobiliario y equipo de computo debajo de MD

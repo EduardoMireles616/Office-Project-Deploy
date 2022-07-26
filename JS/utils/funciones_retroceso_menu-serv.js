@@ -48,12 +48,37 @@ import { instalacion,
     selectReparacionMD,
     nosotros,
     nosotrosMenuServ,
-    nosotrosServ,
     clientesGaleria,
-    nosotrosHerramienta,
     contactoTitulo,
     contactoForm,
-    otrosClientes
+    otrosClientes,
+    clientesPrincipales,
+    clientesPrincipalesTitulo,
+    nosotros_menuServMD1,
+    nosotros_menuServMD2,
+    nosotros_menuServMD3,
+    nosotros_menuServMD4,
+    nosotros_menuServMD5,
+    nosotros_menuServMD6,
+    contactoFormMD1,
+    contactoFormMD2,
+    contactoFormMD3,
+    contactoFormMD4,
+    contactoFormMD5,
+    contactoFormMD6,
+    galeriaClientesMD1,
+    galeriaClientesMD2,
+    galeriaClientesMD3,
+    galeriaClientesMD4,
+    galeriaClientesMD5,
+    galeriaClientesMD6,
+    procesoMudanzaComputadoras,
+    procesoMudanzaMobiliario,
+    procesoRec,
+    procesoArmadoDesarmado,
+    procesoArmadoDesarmadoMD
+
+    
 
 } from '../utils/selectores.js'
 import { mudanzaMobiliarioSeleccionadoMDS } from './funciones_menu-sev-md.js';
@@ -69,6 +94,7 @@ export function regresarInstalacion() {
     cerrar.classList.remove('active');
     armado.classList.add('ocultar');
     desarmado.classList.add('ocultar');
+    procesoArmadoDesarmado.classList.add('ocultar')
 }
 
 //! Regresa de haber seleccionado "MUDANZAS" al estado normal del menú de servicios
@@ -80,7 +106,9 @@ export function regresarmudanzas() {
     cerrarMudanzas.classList.add('ocultar');
     cerrarMudanzas.classList.remove('active');
     mobiliario.classList.add('ocultar');
-    computadoras.classList.add('ocultar')
+    computadoras.classList.add('ocultar');
+    procesoMudanzaComputadoras.classList.add('ocultar');
+    procesoMudanzaMobiliario.classList.add('ocultar');
 }
 
 //! Regresa de haber seleccionado "RECONFIGURACION" al estado normal del menú de servicios
@@ -93,6 +121,129 @@ export function regresarRec() {
     cerrarRec.classList.remove('active');
     mobiliarioRec.classList.add('ocultar');
     recInt.classList.add('ocultar');
+    procesoRec.classList.add('ocultar');
+}
+
+// ? Menu de Sub-ervicio especifico seleccionado
+//? Mobiliario
+//! Regresa de haber sellecionado "Armado" a los sub-servicios de "MOBILIARIO"
+export function regresarArmado() {
+    armadoS.classList.add('ocultar')
+    cerrarArmado.classList.add('ocultar');
+    cerrarArmado.classList.remove('active');
+    desarmado.classList.remove('ocultar');
+    instalacion.classList.remove('ocultar');
+    armado.classList.add('container__servicio--armado');
+    armado.classList.remove('container__servicio--armado-s-s');
+    nosotrosMenuServ.classList.add('ocultar');
+    clientesGaleria.classList.add('ocultar');
+    contactoTitulo.classList.add('ocultar');
+    contactoForm.classList.add('ocultar');
+    otrosClientes.classList.add('ocultar');
+    clientesPrincipalesTitulo.classList.add('ocultar');
+    clientesPrincipales.classList.add('ocultar');
+    procesoArmadoDesarmado.classList.remove('ocultar');
+    
+}
+
+//! Regresa de haber sellecionado "Desarmado" a los sub-servicios de "MOBILIARIO"
+export function regresarDesarmado() {
+    desarmadoS.classList.add('ocultar')
+    cerrarDesarmado.classList.add('ocultar');
+    cerrarDesarmado.classList.remove('active');
+    desarmado.classList.remove('ocultar');
+    instalacion.classList.remove('ocultar');
+    armado.classList.remove('ocultar');
+    desarmado.classList.add('container__servicio--desarmado');
+    desarmado.classList.remove('container__servicio--desarmado-s-s');
+    nosotrosMenuServ.classList.add('ocultar');
+    clientesGaleria.classList.add('ocultar');
+    contactoTitulo.classList.add('ocultar');
+    contactoForm.classList.add('ocultar');
+    otrosClientes.classList.add('ocultar');
+    clientesPrincipalesTitulo.classList.add('ocultar');
+    clientesPrincipales.classList.add('ocultar');
+    procesoArmadoDesarmado.classList.remove('ocultar');
+}
+
+//?Mudanza
+//! Regresa de haber sellecionado "Mobiliario" a los sub-servicios de "MUDANZA"
+export function regresarMobiliario() {
+    mobiliarioS.classList.add('ocultar')
+    cerrarMobiliario.classList.add('ocultar');
+    cerrarMobiliario.classList.remove('active');
+    mobiliario.classList.remove('ocultar');
+    mudanzas.classList.remove('ocultar');
+    computadoras.classList.remove('ocultar');
+    mobiliario.classList.add('container__servicio--mobiliario');
+    mobiliario.classList.remove('container__servicio--mobiliario-s-s');
+    nosotrosMenuServ.classList.add('ocultar');
+    clientesGaleria.classList.add('ocultar');
+    contactoTitulo.classList.add('ocultar');
+    contactoForm.classList.add('ocultar');
+    otrosClientes.classList.add('ocultar');
+    clientesPrincipalesTitulo.classList.add('ocultar');
+    clientesPrincipales.classList.add('ocultar');
+    procesoMudanzaMobiliario.classList.add('ocultar');
+    procesoMudanzaMobiliario.classList.add('ocultar')
+}
+
+//! Regresa de haber sellecionado "Computadoras" a los sub-servicios de "MUDANZA"
+export function regresarComputadoras() {
+    computadorasS.classList.add('ocultar')
+    cerrarComputadoras.classList.add('ocultar');
+    cerrarComputadoras.classList.remove('active');
+    computadoras.classList.remove('ocultar');
+    mudanzas.classList.remove('ocultar');
+    mobiliario.classList.remove('ocultar');
+    computadoras.classList.add('container__servicio--computadoras');
+    computadoras.classList.remove('container__servicio--computadoras-s-s');
+    nosotrosMenuServ.classList.add('ocultar');
+    clientesGaleria.classList.add('ocultar');
+    contactoTitulo.classList.add('ocultar');
+    contactoForm.classList.add('ocultar');
+    otrosClientes.classList.add('ocultar');
+    clientesPrincipalesTitulo.classList.add('ocultar');
+    clientesPrincipales.classList.add('ocultar');
+    procesoMudanzaComputadoras.classList.add('ocultar');
+}
+
+//? Reconfiguración
+export function regresarMobiliarioRec() {
+    mobiliarioRecS.classList.add('ocultar')
+    cerrarMobiliarioRec.classList.add('ocultar');
+    cerrarMobiliarioRec.classList.remove('active');
+    recInt.classList.remove('ocultar');
+    reconfiguracion.classList.remove('ocultar');
+    mobiliarioRec.classList.remove('ocultar');
+    mobiliarioRec.classList.add('container__servicio--mobiliario-rec');
+    mobiliarioRec.classList.remove('container__servicio--mobiliario-rec-s-s');
+    nosotrosMenuServ.classList.add('ocultar');
+    clientesGaleria.classList.add('ocultar');
+    contactoTitulo.classList.add('ocultar');
+    contactoForm.classList.add('ocultar');
+    otrosClientes.classList.add('ocultar');
+    clientesPrincipalesTitulo.classList.add('ocultar');
+    clientesPrincipales.classList.add('ocultar');
+    procesoRec.classList.remove('ocultar');
+}
+
+export function regresarRecInt() {
+    RecIntS.classList.add('ocultar')
+    cerrarRecInt.classList.add('ocultar');
+    cerrarRecInt.classList.remove('active');
+    mobiliarioRec.classList.remove('ocultar');
+    reconfiguracion.classList.remove('ocultar');
+    recInt.classList.remove('ocultar');
+    recInt.classList.add('container__servicio--reconfiguracion');
+    recInt.classList.remove('container__servicio--mobiliario-recInt-s-s');
+    nosotrosMenuServ.classList.add('ocultar');
+    clientesGaleria.classList.add('ocultar');
+    contactoTitulo.classList.add('ocultar');
+    contactoForm.classList.add('ocultar');
+    otrosClientes.classList.add('ocultar');
+    clientesPrincipalesTitulo.classList.add('ocultar');
+    clientesPrincipales.classList.add('ocultar');
 }
 
 // ? Menu principal de Servicios debajo de tamaño de pantalla MEDIANO
@@ -104,6 +255,8 @@ export function regresarInstalacionMD() {
     cerrarMD.classList.remove('active');
     armadoMD.classList.add('ocultar');
     desarmadoMD.classList.add('ocultar');
+    nosotros_menuServMD1.classList.add('ocultar');
+    procesoArmadoDesarmadoMD.classList.add('ocultar');
 }
 
 //! Regresa de haber seleccionado "MUDANZAS" al estado normal del menú de servicios debajo de tamaño mediano de pantalla
@@ -128,6 +281,8 @@ export function regresarReconfiguracionMD() {
     cerrarReconfiguracionMD.classList.remove('active');
     mobiliarioRecMD.classList.add('ocultar');
     reparacionMD.classList.add('ocultar');
+    
+
 }
 
 export function regresarMudanzaMobiliarioMD() {
@@ -137,6 +292,9 @@ export function regresarMudanzaMobiliarioMD() {
     mobiliarioMD.classList.add('container__servicio--mobiliario-md-down');
     selectMudanzaMobiliarioMD.classList.add('ocultar');
     cerrarMudanzaMobiliarioMD.classList.add('ocultar');
+    nosotros_menuServMD3.classList.add('ocultar');
+    contactoFormMD3.classList.add('ocultar');
+    galeriaClientesMD3.classList.add('ocultar');
 }
 
 export function regresarMudanzaComputadorasMD() {
@@ -146,6 +304,9 @@ export function regresarMudanzaComputadorasMD() {
     computadorasMD.classList.add('container__servicio--computadoras-md-down');
     selectMudanzaComputadorasMD.classList.add('ocultar');
     cerrarMudanzaComputadorasMD.classList.add('ocultar');
+    nosotros_menuServMD4.classList.add('ocultar');
+    contactoFormMD4.classList.add('ocultar');
+    galeriaClientesMD4.classList.add('ocultar');
 }
 
 export function regresarReconfiguraciónMobiliarioMD() {
@@ -156,6 +317,9 @@ export function regresarReconfiguraciónMobiliarioMD() {
     mobiliarioRecMD.classList.add('container__servicio--mobiliario-rec-md-down');
     selectMobiliarioRecMD.classList.add('ocultar');
     cerrarRecMobiliarioMD.classList.add('ocultar');
+    nosotros_menuServMD5.classList.add('ocultar');
+    contactoFormMD5.classList.add('ocultar');
+    galeriaClientesMD5.classList.add('ocultar');
 
 }
 
@@ -167,6 +331,11 @@ export function regresarReparacionMD() {
     reparacionMD.classList.add('container__servicio--rec_int-md-down');
     selectReparacionMD.classList.add('ocultar');
     cerrarReperacionMD.classList.add('ocultar');
+    nosotros_menuServMD6.classList.add('ocultar');
+    contactoFormMD6.classList.add('ocultar');
+    galeriaClientesMD6.classList.add('ocultar');
+    
+    
 }
 
 //!Regresar del la seccion de inofrmacion del sub servicio de armado 
@@ -178,6 +347,9 @@ export function regresarArmadoMD(){
     cerrararmadoMD.classList.add('ocultar');
     cerrararmadoMD.classList.remove('active');
     desarmadoMD.classList.remove('ocultar');
+    nosotros_menuServMD1.classList.add('ocultar');
+    contactoFormMD1.classList.add('ocultar');
+    galeriaClientesMD1.classList.add('ocultar');
 }
 
 //!Regresar del la seccion de inofrmacion del sub servicio de desarmado 
@@ -189,118 +361,10 @@ export function regresarDesrmadoMD(){
     cerrarDesarmadoMD.classList.add('ocultar');
     cerrarDesarmadoMD.classList.remove('active');
     armadoMD.classList.remove('ocultar');
-}
-// ? Menu de Sub-ervicio especifico seleccionado
-//? Mobiliario
-//! Regresa de haber sellecionado "Armado" a los sub-servicios de "MOBILIARIO"
-export function regresarArmado() {
-    armadoS.classList.add('ocultar')
-    cerrarArmado.classList.add('ocultar');
-    cerrarArmado.classList.remove('active');
-    desarmado.classList.remove('ocultar');
-    instalacion.classList.remove('ocultar');
-    armado.classList.add('container__servicio--armado');
-    armado.classList.remove('container__servicio--armado-s-s');
-    nosotrosServ.classList.add('ocultar');
-    nosotrosMenuServ.classList.add('ocultar');
-    clientesGaleria.classList.add('ocultar');
-    nosotrosHerramienta.classList.add('ocultar');
-    contactoTitulo.classList.add('ocultar');
-    contactoForm.classList.add('ocultar');
-    otrosClientes.classList.add('ocultar');
-    
-}
-
-//! Regresa de haber sellecionado "Desarmado" a los sub-servicios de "MOBILIARIO"
-export function regresarDesarmado() {
-    desarmadoS.classList.add('ocultar')
-    cerrarDesarmado.classList.add('ocultar');
-    cerrarDesarmado.classList.remove('active');
-    desarmado.classList.remove('ocultar');
-    instalacion.classList.remove('ocultar');
-    armado.classList.remove('ocultar');
-    desarmado.classList.add('container__servicio--desarmado');
-    desarmado.classList.remove('container__servicio--desarmado-s-s');
-    nosotrosServ.classList.add('ocultar');
-    nosotrosMenuServ.classList.add('ocultar');
-    clientesGaleria.classList.add('ocultar');
-    nosotrosHerramienta.classList.add('ocultar');
-    contactoTitulo.classList.add('ocultar');
-    contactoForm.classList.add('ocultar');
-    otrosClientes.classList.add('ocultar');
+    nosotros_menuServMD2.classList.add('ocultar');
+    contactoFormMD2.classList.add('ocultar');
+    galeriaClientesMD2.classList.add('ocultar');
 }
 
 
-
-//?Mudanza
-//! Regresa de haber sellecionado "Mobiliario" a los sub-servicios de "MUDANZA"
-export function regresarMobiliario() {
-    mobiliarioS.classList.add('ocultar')
-    cerrarMobiliario.classList.add('ocultar');
-    cerrarMobiliario.classList.remove('active');
-    mobiliario.classList.remove('ocultar');
-    mudanzas.classList.remove('ocultar');
-    computadoras.classList.remove('ocultar');
-    mobiliario.classList.add('container__servicio--mobiliario');
-    mobiliario.classList.remove('container__servicio--mobiliario-s-s');
-    nosotrosServ.classList.add('ocultar');
-    nosotrosMenuServ.classList.add('ocultar');
-    clientesGaleria.classList.add('ocultar');
-    nosotrosHerramienta.classList.add('ocultar');
-    contactoTitulo.classList.add('ocultar');
-    otrosClientes.classList.add('ocultar');
-}
-
-//! Regresa de haber sellecionado "Computadoras" a los sub-servicios de "MUDANZA"
-export function regresarComputadoras() {
-    computadorasS.classList.add('ocultar')
-    cerrarComputadoras.classList.add('ocultar');
-    cerrarComputadoras.classList.remove('active');
-    computadoras.classList.remove('ocultar');
-    mudanzas.classList.remove('ocultar');
-    mobiliario.classList.remove('ocultar');
-    computadoras.classList.add('container__servicio--computadoras');
-    computadoras.classList.remove('container__servicio--computadoras-s-s');
-    nosotrosServ.classList.add('ocultar');
-    nosotrosMenuServ.classList.add('ocultar');
-    clientesGaleria.classList.add('ocultar');
-    nosotrosHerramienta.classList.add('ocultar');
-    contactoTitulo.classList.add('ocultar');
-    otrosClientes.classList.add('ocultar');
-}
-
-//? Reconfiguración
-export function regresarMobiliarioRec() {
-    mobiliarioRecS.classList.add('ocultar')
-    cerrarMobiliarioRec.classList.add('ocultar');
-    cerrarMobiliarioRec.classList.remove('active');
-    recInt.classList.remove('ocultar');
-    reconfiguracion.classList.remove('ocultar');
-    mobiliarioRec.classList.remove('ocultar');
-    mobiliarioRec.classList.add('container__servicio--mobiliario-rec');
-    mobiliarioRec.classList.remove('container__servicio--mobiliario-rec-s-s');
-    nosotrosServ.classList.add('ocultar');
-    nosotrosMenuServ.classList.add('ocultar');
-    clientesGaleria.classList.add('ocultar');
-    nosotrosHerramienta.classList.add('ocultar');
-    contactoTitulo.classList.add('ocultar');
-    otrosClientes.classList.add('ocultar');
-}
-
-export function regresarRecInt() {
-    RecIntS.classList.add('ocultar')
-    cerrarRecInt.classList.add('ocultar');
-    cerrarRecInt.classList.remove('active');
-    mobiliarioRec.classList.remove('ocultar');
-    reconfiguracion.classList.remove('ocultar');
-    recInt.classList.remove('ocultar');
-    recInt.classList.add('container__servicio--reconfiguracion');
-    recInt.classList.remove('container__servicio--mobiliario-recInt-s-s');
-    nosotrosServ.classList.add('ocultar');
-    nosotrosMenuServ.classList.add('ocultar');
-    clientesGaleria.classList.add('ocultar');
-    nosotrosHerramienta.classList.add('ocultar');
-    contactoTitulo.classList.add('ocultar');
-    otrosClientes.classList.add('ocultar');
-}
 

@@ -21,7 +21,11 @@ import { instalacion,
     mobiliarioRecS,
     cerrarMobiliarioRec,
     RecIntS,
-    cerrarRecInt
+    cerrarRecInt,
+    procesoMudanzaComputadoras,
+    procesoMudanzaMobiliario,
+    procesoRec,
+    procesoArmadoDesarmado
 
 } from '../utils/selectores.js'
 
@@ -36,6 +40,7 @@ import { instalacion,
     cerrar.classList.add('active');
     armado.classList.remove('ocultar');
     desarmado.classList.remove('ocultar');
+    procesoArmadoDesarmado.classList.remove('ocultar');
 
  }
 
@@ -64,6 +69,7 @@ import { instalacion,
     cerrarRec.classList.add('active');
     mobiliarioRec.classList.remove('ocultar');
     recInt.classList.remove('ocultar');
+    procesoRec.classList.remove('ocultar');
 
  }
 
@@ -109,7 +115,8 @@ import { instalacion,
     mobiliario.classList.add('container__servicio--mobiliario-s-s');
     cerrarMobiliario.classList.remove('ocultar');
     cerrarMobiliario.classList.add('active');
-    mobiliarioS.classList.remove('ocultar'); 
+    mobiliarioS.classList.remove('ocultar');
+    procesoMudanzaMobiliario.classList.remove('ocultar'); 
 
  }
 
@@ -123,6 +130,7 @@ import { instalacion,
     cerrarComputadoras.classList.remove('ocultar');
     cerrarComputadoras.classList.add('active');
     computadorasS.classList.remove('ocultar'); 
+    procesoMudanzaComputadoras.classList.remove('ocultar');
 
  }
 
